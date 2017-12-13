@@ -1,0 +1,23 @@
+{
+  "name": "resume",
+  "version": "1.0.0",
+  "description": "基于原生JS+HTML5+CSS3实现的在线个人简历",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mgss/resume.git"
+  },
+  "author": "mgss",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mgss/resume/issues"
+  },
+  "homepage": "https://github.com/mgss/resume#readme",
+  "devDependencies": {
+    "webpack": "^3.10.0",
+    "webpack-dev-server": "^2.9.7"
+  }
+}
