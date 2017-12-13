@@ -12,7 +12,7 @@
 * Less实现CSS预编译
 * webpack自动化打包开发
 * Vue + Element实现SPA后台管理
-* 基于ESlink代码风格检查
+* 基于ESlint代码风格检查
 
 后端
 
