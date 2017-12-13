@@ -1,4 +1,2 @@
-/**
- * Created by evanbell
- * Date on 2017/12/13.
- */
+var cs = document.getElementById('root');
+cs.style.opacity = 1

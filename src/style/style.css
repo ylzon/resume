@@ -1,0 +1,7 @@
+@import './flex.css';
+
+body{
+    background-color: red;
+    border-radius: 5px;
+    opacity: 1;
+}

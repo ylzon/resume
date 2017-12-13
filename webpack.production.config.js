@@ -1,13 +1,12 @@
 const path = require('path');
 const webpack = require('webpack')
 const htmlWebpackPlugin = require('html-webpack-plugin');
-const openBrowserPlugin = require('open-browser-webpack-plugin');
 
 module.exports = {
     entry: path.resolve(__dirname, 'src/main.js'),
     output: {
         path: path.join(__dirname, 'dist'),
-        filename: 'js/bundle.[name].js',
+        filename: 'js/bundle.[name].[chunkhash:8].js',
     },
     module: {
         rules: [
@@ -98,26 +97,9 @@ module.exports = {
             filename: 'index.html',
             inject: 'body',
         }),
-
-        // 热加载插件
-        new webpack.HotModuleReplacementPlugin(),
-
-        // 打开浏览器
-        new openBrowserPlugin({
-            url: 'http://localhost:9000'
-        }),
-        // 可在业务 js 代码中使用 __DEV__ 判断是否是dev模式（dev模式下可以提示错误、测试报告等, production模式不提示）
         new webpack.DefinePlugin({
             __DEV__: JSON.stringify(JSON.parse((process.env.NODE_ENV == 'dev') || 'false'))
         })
 
-    ],
-    devServer: {
-        contentBase: path.join(__dirname, "dist"),
-        compress: true,
-        port: 9000,
-        historyApiFallback: true,
-        inline: true,
-        hot: true
-    }
+    ]
 }

@@ -1,8 +1,29 @@
 # Resume
 基于原生JS+HTML5+CSS3实现的在线个人简历
 
-[在线预览(开发中)]()
+前台预览：[在线预览(开发中)]()<br>
+后台管理；[在线预览(开发中)]()
 
+## 运行方式
+拉取代码
+```javascript
+git@github.com:mgss/resume.git
+```
+安装npm依赖包
+```javascript
+npm install
+```
+开启本地开发热更新模式
+```javascript
+npm start
+
+// 或者
+npm run dev
+```
+构建服务器部署版本
+```javascript
+npm run build
+```
 ## 项目技术栈
 
 前端
