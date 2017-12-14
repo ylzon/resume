@@ -1,11 +1,11 @@
 const path = require('path')
 const glob = require('glob')
 const webpack = require('webpack')
-const config = require('./config/index')
+const config = require('./config/index')   // 配置文件
 const CleanWebpackPlugin = require('clean-webpack-plugin')  // 清除文件夹插件
 const ExtractTextPlugin = require('extract-text-webpack-plugin')    // 分离CSS插件
 const HtmlWebpackPlugin = require('html-webpack-plugin')    // 生成html打包插件
-const UglifyJSPlugin = require('uglifyjs-webpack-plugin')   // 压缩打包插件
+
 
 const SRC_PATH = path.resolve('./src')     // 源代码的根目录（本地物理文件路径）
 const ASSETS_BUILD_PATH = path.resolve('./dist')    // 打包后的资源根目录（本地物理文件路径）
@@ -147,13 +147,6 @@ module.exports = {
             jQuery: 'jquery',
             'window.jQuery': 'jquery',
         }),
-        // 启用 CommonChunkPlugin
-        // new webpack.optimize.CommonsChunkPlugin({
-        //     names: 'vendor',
-        //     minChunks: Infinity
-        // }),
-        // 启动 minify
-        new webpack.LoaderOptionsPlugin({ minimize: true }),
         // 官方文档推荐使用下面的插件确保 NODE_ENV
         new webpack.DefinePlugin({
             'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV || 'production')
@@ -164,10 +157,10 @@ module.exports = {
             allChunks: true,
             ignoreOrder: true
         }),
-        //压缩js代码--链接 https://doc.webpack-china.org/plugins/uglifyjs-webpack-plugin/
-        new UglifyJSPlugin(),
+        
     ]
 };
+// 循环多页面路目录内的文件
 chunks.forEach(function(pathname) {
     if (pathname == 'vendor') {
         return;

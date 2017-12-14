@@ -6,7 +6,7 @@
   "scripts": {
     "start": "npm run dev",
     "dev": "NODE_ENV=dev webpack-dev-server --config ./build/webpack.config.dev.js --progress --colors --watch",
-    "build": "NODE_ENV=production webpack --progress --colors"
+    "build": "NODE_ENV=production webpack --config ./build/webpack.config.prod.js --progress --colors"
   },
   "repository": {
     "type": "git",
