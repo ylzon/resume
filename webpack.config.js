@@ -1,15 +1,11 @@
 const path = require('path')
 const glob = require('glob')
 const webpack = require('webpack')
+const config = require('./config/index')
 const CleanWebpackPlugin = require('clean-webpack-plugin')  // 清除文件夹插件
 const ExtractTextPlugin = require('extract-text-webpack-plugin')    // 分离CSS插件
 const HtmlWebpackPlugin = require('html-webpack-plugin')    // 生成html打包插件
 const UglifyJSPlugin = require('uglifyjs-webpack-plugin')   // 压缩打包插件
-
-//因为自己改变了文件的路径，这里需要重新处理一下
-// function resolve(dir){
-//     return path.join(__dirname,'..',dir);
-// }
 
 const SRC_PATH = path.resolve('./src')     // 源代码的根目录（本地物理文件路径）
 const ASSETS_BUILD_PATH = path.resolve('./dist')    // 打包后的资源根目录（本地物理文件路径）
@@ -34,12 +30,7 @@ module.exports = {
     resolve: {
         extensions: ['.js'],    // 默认省略后缀
     },
-    entry: {
-        // 注意 entry 中的路径都是相对于 SRC_PATH 的路径
-        index: './js/page/index.js',
-        about: './js/page/about.js',
-        list: './js/page/list.js',
-    },
+    entry: config.pages,
     output: {
         path: path.join(__dirname, 'dist'),
         filename: ASSETS_PUBLIC_PATH + 'js/[name].[chunkhash:8].js'
