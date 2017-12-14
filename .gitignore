@@ -8,6 +8,9 @@ yarn-error.log*
 # WebStorm
 .idea/
 
+# macOS
+.DS_store
+
 # Runtime data
 pids
 *.pid
