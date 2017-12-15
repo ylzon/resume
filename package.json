@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "npm run dev",
+    "server": "http-server -p 8989 ./dist",
     "dev": "NODE_ENV=dev webpack-dev-server --config ./build/webpack.config.dev.js --progress --colors --watch",
     "build": "NODE_ENV=production webpack --config ./build/webpack.config.prod.js --progress --colors"
   },

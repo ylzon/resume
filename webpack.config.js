@@ -107,9 +107,7 @@ module.exports = {
                         options: {
                             plugins: [
                                 require('postcss-import'),
-                                require('autoprefixer')({
-                                    browsers: ['last 5 versions']
-                                }),
+                                require('autoprefixer')(config.browsers),
                             ]
                         }
                     }
@@ -127,9 +125,7 @@ module.exports = {
                         options: {
                             plugins: [
                                 require('postcss-import'),
-                                require('autoprefixer')({
-                                    browsers: ['last 5 versions']
-                                }),
+                                require('autoprefixer')(config.browsers),
                             ]
                         }
                     },
