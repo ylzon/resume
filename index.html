@@ -7,35 +7,38 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>个人简历</title>
     <link rel="stylesheet" href="./style/main.css">
+    <script src="//at.alicdn.com/t/font_902768_2yskmbaad1c.js"></script>
 </head>
 
 <body>
-    <header class="topNavBar clearfix">
-        <div class="logo" style="float: left;">
-            <span class="rs">RS</span><span class="card">card</span>
+    <header class="topNavBar">
+        <div class="container topNavBar-inner clearfix">
+            <div class="logo" style="float: left;">
+                <span class="rs">RS</span><span class="card">card</span>
+            </div>
+            <nav style="float: right;">
+                <ul>
+                    <li><a class="active" href="javascript:;">关于</a></li>
+                    <li><a href="javascript:;">技能</a></li>
+                    <li><a href="javascript:;">作品</a></li>
+                    <li><a href="javascript:;">工作</a></li>
+                </ul>
+            </nav>
         </div>
-        <nav style="float: right;">
-            <ul>
-                <li><a href="javascript:;">关于</a></li>
-                <li><a href="javascript:;">专业技能</a></li>
-                <li><a href="javascript:;">作品集</a></li>
-                <li><a href="javascript:;">工作经验</a></li>
-            </ul>
-        </nav>
     </header>
-    <div class="banner" style="background-image: url(#)"></div>
+    <div class="banner" style="background-image: url(image/rs-cover.jpg)"></div>
     <main>
-        <div class="card">
-            <div class="pictureAndText">
+        <div class="infoCard">
+            <div class="pictureAndText clearfix">
                 <div class="picture">
-                    <img src="" alt="头像">
+                    <img src="./image/avatar.jpg" alt="头像">
                 </div>
                 <div class="text">
-                    <span class="welcome">Hello</span>
+                    <span class="welcome">HELLO</span>
                     <h1>闫乐忠</h1>
                     <p>前端开发工程师</p>
                     <hr>
-                    <dl>
+                    <dl class="clearfix">
                         <dt>年龄</dt>
                         <dd>23</dd>
                         <dt>所在城市</dt>
@@ -47,89 +50,108 @@
                     </dl>
                 </div>
             </div>
-            <footer class="midia">
-                <a href="javascript:;" alt="邮箱"></a>
-                <a href="javascript:;" alt="QQ"></a>
-                <a href="javascript:;" alt="微信"></a>
-                <a href="javascript:;" alt="微博"></a>
-                <a href="javascript:;" alt="博客"></a>
-                <a href="javascript:;" alt="GitHub"></a>
+            <footer class="media">
+                <a href="javascript:;">
+                    <svg class="icon" aria-hidden="true">
+                        <use xlink:href="#icon-github-fill"></use>
+                    </svg>
+                </a>
+                <a href="javascript:;">
+                    <svg class="icon" aria-hidden="true">
+                        <use xlink:href="#icon-wechat-fill"></use>
+                    </svg>    
+                </a>
+                <a href="javascript:;">
+                    <svg class="icon" aria-hidden="true">
+                        <use xlink:href="#icon-QQ"></use>
+                    </svg>
+                </a>
+                <a href="javascript:;">
+                    <svg class="icon" aria-hidden="true">
+                        <use xlink:href="#icon-weibo"></use>
+                    </svg>
+                </a>
+                <a href="javascript:;">
+                    <svg class="icon" aria-hidden="true">
+                        <use xlink:href="#icon-wangzhan"></use>
+                    </svg>
+                </a>
             </footer>
-            <a href="javascript:;" class="button">下载 PDF 简历</a>
-            <p>
-                Hello! I’m Lezhong Yan. Senior Web Developer specializing in front end development. Experienced with
-                all stages of the development cycle for dynamic web projects. Well-versed in numerous programming
-                languages including JavaScript, SQL, and C. Stng background in project management and customer
-                relations.
-            </p>
-            <section>
-                <h2>专业技能</h2>
-                <ol>
-                    <li>HTML 5 & CSS 3</li>
-                    <li>JavaScript</li>
-                    <li>React技术栈</li>
-                    <li>Vue技术栈</li>
-                    <li>jQuery</li>
-                    <li>Dart & Flutter</li>
-                </ol>
-            </section>
-            <section>
-                <h2>作品集</h2>
-                <nav>
-                    <ol>
-                        <li>所有</li>
-                        <li>框架</li>
-                        <li>原生JS & CSS</li>
-                    </ol>
-                </nav>
-                <div class="project">
-                    <div class="big"></div>
-                    <div class="small"></div>
-                    <div class="small"></div>
-                </div>
-            </section>
-            <section>
-                <h2>工作经验</h2>
-                <div class="timeline-inner">
-                    <div class="timeline-box timeline-box-compact timeline-box-left">
-                        <span class="dot"></span>
-                        <div class="timeline-box-inner">
-                            <span class="arrow"></span>
-                            <div class="date">2012 - 2014</div>
-                            <h3>XXX有限公司</h3>
-                            <h4>
-                                <a href="">前端开发工程师</a>
-                            </h4>
-                            <p>This was beginning of my career.  Developed, managed, operated and promoted an Internet business.Handled customer support issues.</p>
-                        </div>
-                    </div>
-                    <div class="timeline-box timeline-box-compact timeline-box-right">
-                        <span class="dot"></span>
-                        <div class="timeline-box-inner animate-left animated">
-                            <span class="arrow"></span>
-                            <div class="date">2017.3 - 2017.8</div>
-                            <h3>XX有限公司</h3>
-                            <h4>
-                                <a href="">前端开发（实习）</a>
-                            </h4>
-                            <p>This was beginning of my career.  Developed, managed, operated and promoted an Internet business.Handled customer support issues.</p>
-                        </div>
-                    </div>
-                    <div class="timeline-box timeline-box-compact timeline-box-left">
-                        <span class="dot"></span>
-                        <div class="timeline-box-inner">
-                            <span class="arrow"></span>
-                            <div class="date">2012 - 2014</div>
-                            <h3>XXX有限公司</h3>
-                            <h4>
-                                <a href="">前端开发工程师</a>
-                            </h4>
-                            <p>This was beginning of my career.  Developed, managed, operated and promoted an Internet business.Handled customer support issues.</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
         </div>
+        <a href="javascript:;" class="button">下载 PDF 简历</a>
+        <p>
+            Hello! I’m Lezhong Yan. Senior Web Developer specializing in front end development. Experienced with
+            all stages of the development cycle for dynamic web projects. Well-versed in numerous programming
+            languages including JavaScript, SQL, and C. Stng background in project management and customer
+            relations.
+        </p>
+        <section>
+            <h2>专业技能</h2>
+            <ol>
+                <li>HTML 5 & CSS 3</li>
+                <li>JavaScript</li>
+                <li>React技术栈</li>
+                <li>Vue技术栈</li>
+                <li>jQuery</li>
+                <li>Dart & Flutter</li>
+            </ol>
+        </section>
+        <section>
+            <h2>作品集</h2>
+            <nav>
+                <ol>
+                    <li>所有</li>
+                    <li>框架</li>
+                    <li>原生JS & CSS</li>
+                </ol>
+            </nav>
+            <div class="project">
+                <div class="big"></div>
+                <div class="small"></div>
+                <div class="small"></div>
+            </div>
+        </section>
+        <section>
+            <h2>工作经验</h2>
+            <div class="timeline-inner">
+                <div class="timeline-box timeline-box-compact timeline-box-left">
+                    <span class="dot"></span>
+                    <div class="timeline-box-inner">
+                        <span class="arrow"></span>
+                        <div class="date">2012 - 2014</div>
+                        <h3>XXX有限公司</h3>
+                        <h4>
+                            <a href="">前端开发工程师</a>
+                        </h4>
+                        <p>This was beginning of my career.  Developed, managed, operated and promoted an Internet business.Handled customer support issues.</p>
+                    </div>
+                </div>
+                <div class="timeline-box timeline-box-compact timeline-box-right">
+                    <span class="dot"></span>
+                    <div class="timeline-box-inner animate-left animated">
+                        <span class="arrow"></span>
+                        <div class="date">2017.3 - 2017.8</div>
+                        <h3>XX有限公司</h3>
+                        <h4>
+                            <a href="">前端开发（实习）</a>
+                        </h4>
+                        <p>This was beginning of my career.  Developed, managed, operated and promoted an Internet business.Handled customer support issues.</p>
+                    </div>
+                </div>
+                <div class="timeline-box timeline-box-compact timeline-box-left">
+                    <span class="dot"></span>
+                    <div class="timeline-box-inner">
+                        <span class="arrow"></span>
+                        <div class="date">2012 - 2014</div>
+                        <h3>XXX有限公司</h3>
+                        <h4>
+                            <a href="">前端开发工程师</a>
+                        </h4>
+                        <p>This was beginning of my career.  Developed, managed, operated and promoted an Internet business.Handled customer support issues.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
     <footer>
         

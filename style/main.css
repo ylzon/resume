@@ -1,8 +1,12 @@
 /* 全局样式 */
-body {
-  background: black;
-  color: white;
+
+* {
+  padding: 0;
   margin: 0;
+}
+
+body {
+  background: #EFEFEF;
 }
 
 a {
@@ -10,16 +14,39 @@ a {
   text-decoration: none;
 }
 
+hr {
+  height: 0;
+  border: none;
+  border-top: 1px solid #DEDEDE;
+}
+
 /* 清除浮动 */
+
 .clearfix::after {
   content: '';
   display: block;
   clear: both;
 }
 
+/* 图标字体 */
+.icon {
+  width: 1em; height: 1em;
+  vertical-align: -0.15em;
+  fill: currentColor;
+  overflow: hidden;
+}
+
+/* 容器 */
+
+.container {
+  max-width: 1530px;
+  margin: 0 auto;
+}
+
 /* header - logo */
+
 .topNavBar .logo {
-  font-size: 24px;
+  font-size: 26px;
   font-family: 'Arial Black';
   padding-top: 3px;
   padding-bottom: 4px;
@@ -27,36 +54,44 @@ a {
 
 .topNavBar .logo .rs {
   margin-right: 4px;
-  color: #e6686a;
+  color: #35AAF4;
 }
 
 .topNavBar .logo .card {
-  color: #9a9da2;
+  color: #b7b7b7;
 }
 
 /* header - nav */
+
 .topNavBar {
-  padding: 20px 16px 20px 16px;
+  padding: 20px 0 20px 0;
+  position: fixed;
+  width: 100%;
 }
 
-.topNavBar>nav {
+.topNavBar-inner {
+  padding: 0 0;
+}
+
+.topNavBar nav {
   padding-top: 7px;
 }
 
-.topNavBar>nav>ul {
+.topNavBar nav>ul {
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
-.topNavBar>nav>ul>li {
+.topNavBar nav>ul>li {
   float: left;
   margin-left: 17px;
   margin-right: 17px;
 }
 
-.topNavBar>nav>ul>li>a {
-  font-size: 12px;
+.topNavBar nav>ul>li>a {
+  font-size: 16px;
+  font-weight: bold;
   color: #b7b7b7;
   font-weight: bold;
   border-top: 3px solid transparent;
@@ -66,7 +101,122 @@ a {
   display: block;
 }
 
-.topNavBar>nav>ul>li>a:hover {
-  border-bottom: 3px solid #e06567;
+.topNavBar nav>ul>li>a.active {
+  border-bottom: 3px solid #35AAF4;
 }
 
+.topNavBar nav>ul>li>a:hover {
+  border-bottom: 3px solid #35AAF4;
+}
+
+.banner {
+  height: 515px;
+  background-size: cover;
+  background-position: center;
+}
+
+.banner::before {
+  content: '';
+  display: block;
+  height: 100%;
+  background-color: rgba(44, 51, 64, 0.8);
+  ;
+}
+
+/* 个人信息卡片 */
+
+.infoCard {
+  max-width: 930px;
+  margin: 0 auto;
+  background-color: #fff;
+}
+
+.infoCard .pictureAndText {
+  padding: 50px;
+}
+
+.infoCard .picture {
+  float: left;
+}
+
+.infoCard .text {
+  float: left;
+  margin-left: 60px;
+  width: 470px;
+}
+
+.infoCard .text .welcome {
+  display: inline-block;
+  font-size: 14px;
+  font-family: 'Open Sans';
+  padding: 7px 12px;
+  background-color: #35AAF4;
+  color: #fff;
+  font-weight: 700;
+  position: relative;
+}
+
+.infoCard .text .welcome::after {
+  content: '';
+  width: 0;
+  border: 8px solid transparent;
+  border-width: 0px 0px 8px 8px;
+  border-left-color: #35AAF4;
+  position: absolute;
+  top: 100%;
+  left: 5px;
+}
+
+.infoCard .text h1 {
+  font-size: 36px;
+  color: #3D4451;
+  margin: 27px 0 5px 0;
+}
+
+.infoCard .text p {
+  color: #3D4451;
+  font-size: 18px;
+  line-height: 1.1;
+}
+
+.infoCard .text hr {
+  margin: 25px 0;
+}
+
+.infoCard .text dl {
+  font-size: 16px;
+}
+
+.infoCard .text dl dt {
+  float: left;
+  width: 30%;
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+
+.infoCard .text dl dd {
+  float: left;
+  width: 70%;
+  font-weight: 400;
+  margin-bottom: 15px;
+  font-family: 'Open Sans';
+  color: #9FA2A9;
+}
+
+.infoCard .media {
+  text-align: center;
+  background-color: #35AAF4;
+}
+.infoCard .media a{
+  display: inline-block;
+  width: 45px;
+  height: 45px;
+  font-size: 30px;
+  line-height: 45px;
+  color: #fff;
+  border-radius: 50%;
+  margin: 16px;
+}
+.infoCard .media a:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}2
