@@ -20,6 +20,14 @@ hr {
   border-top: 1px solid #DEDEDE;
 }
 
+ul, ol {
+  list-style: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: normal;
+}
+
 /* 清除浮动 */
 
 .clearfix::after {
@@ -29,8 +37,10 @@ hr {
 }
 
 /* 图标字体 */
+
 .icon {
-  width: 1em; height: 1em;
+  width: 1em;
+  height: 1em;
   vertical-align: -0.15em;
   fill: currentColor;
   overflow: hidden;
@@ -40,6 +50,11 @@ hr {
 
 .container {
   max-width: 1530px;
+  margin: 0 auto;
+}
+
+.container-inner {
+  max-width: 930px;
   margin: 0 auto;
 }
 
@@ -99,6 +114,7 @@ hr {
   padding-top: 5px;
   padding-bottom: 5px;
   display: block;
+  transition: all .2s;
 }
 
 .topNavBar nav>ul>li>a.active {
@@ -107,7 +123,10 @@ hr {
 
 .topNavBar nav>ul>li>a:hover {
   border-bottom: 3px solid #35AAF4;
+  color: #e6e6e6;
 }
+
+/* 背景banner */
 
 .banner {
   height: 515px;
@@ -125,14 +144,17 @@ hr {
 
 /* 个人信息卡片 */
 
+body>main {
+  margin-top: -345px;
+}
+
 .infoCard {
-  max-width: 930px;
-  margin: 0 auto;
   background-color: #fff;
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.31);
 }
 
 .infoCard .pictureAndText {
-  padding: 50px;
+  padding: 50px 50px 40px 50px;
 }
 
 .infoCard .picture {
@@ -149,7 +171,7 @@ hr {
   display: inline-block;
   font-size: 14px;
   font-family: 'Open Sans';
-  padding: 7px 12px;
+  padding: 4px 12px 6px;
   background-color: #35AAF4;
   color: #fff;
   font-weight: 700;
@@ -207,16 +229,221 @@ hr {
   text-align: center;
   background-color: #35AAF4;
 }
-.infoCard .media a{
+
+.infoCard .media a {
   display: inline-block;
   width: 45px;
   height: 45px;
-  font-size: 30px;
+  font-size: 26px;
   line-height: 45px;
   color: #fff;
   border-radius: 50%;
-  margin: 16px;
+  margin: 20px;
+  transition: all .3s;
 }
+
 .infoCard .media a:hover {
   background-color: rgba(0, 0, 0, 0.1);
-}2
+}
+
+/* 下载按钮 */
+
+.download {
+  text-align: center;
+}
+
+.download a {
+  display: inline-block;
+  margin: 36px 0;
+  color: #3D4451;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 3px;
+  padding: 20px 50px;
+  background-color: #EFEFEF;
+  border: 1px solid #CBCDCF;
+  transition: all .3s;
+}
+
+.download a:hover {
+  box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
+}
+
+/* 个人简介 */
+
+.about {
+  color: #3C3C3C;
+  text-align: center;
+  font-size: 20px;
+  font-family: 'kai';
+  line-height: 1.8;
+}
+
+/* 模块 */
+
+section.skills h2, section.portfolio h2, section.workExperience h2 {
+  font-size: 28px;
+  font-weight: 700;
+  color: #3D4451;
+  text-align: center;
+  letter-spacing: 4px;
+  margin: 70px 0 25px 0;
+}
+
+section.skills ol {
+  display: block;
+  background-color: #fff;
+  border-radius: 2px;
+  padding: 40px 50px 10px 50px;
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.31);
+}
+
+section.skills li {
+  width: 48%;
+  float: left;
+  margin-bottom: 40px;
+}
+
+section.skills li:nth-child(even) {
+  float: right;
+}
+
+section.skills li h3 {
+  font-size: 16px;
+  color: #4C535F;
+  margin-bottom: 6px;
+}
+
+section.skills li .progressBar {
+  height: 5px;
+  background-color: #CEE4F6;
+  position: relative;
+  border-radius: 3px;
+}
+
+section.skills li .progressBar .progress {
+  max-width: 100%;
+  height: 100%;
+  border-radius: 3px;
+  background-color: #35AAF4;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+section.portfolio {
+  text-align: center;
+  margin-bottom: 200px;
+
+}
+
+section.portfolio nav {
+  margin: 0 auto;
+  display: inline-block;
+  vertical-align: top;
+}
+
+section.portfolio nav li {
+  float: left;
+  display: inline-block;
+  margin-right: 50px;
+  font-size: 16px;
+  font-weight: 700;
+  color: #3D4451;
+  cursor: pointer;
+  user-select: none;
+}
+
+section.portfolio nav li:last-child {
+  margin-right: 0;
+}
+
+section.portfolio .bar {
+  height: 5px;
+  width: 100%;
+  margin-top: 6px;
+  background-color: #fff;
+  border-radius: 3px;
+  position: relative;
+}
+
+section.portfolio .bar-inner {
+  position: absolute;
+  left: 0;
+  top: 0;
+  border-radius: 3px;
+  height: 100%;
+  width: 40px;
+  background-color: #35AAF4;
+  transition: all .4s;
+}
+
+section.portfolio .bar.state-1 .bar-inner {
+  left: -2px;
+}
+
+section.portfolio .bar.state-2 .bar-inner {
+  left: 79px;
+}
+
+section.portfolio .bar.state-3 .bar-inner {
+  left: 163px;
+  width: 110px;
+}
+
+section.portfolio .project {
+  position: relative;
+  height: 569px;
+  margin-top: 30px;
+}
+section.portfolio .project img {
+  width: 100%;
+  height: 100%;
+  user-select: none;
+}
+section.portfolio .project .big{
+  width: 622px;
+  height: 570px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.31);
+
+}
+
+section.portfolio .project .small{
+  width: 289px;
+  height: 275px;
+  position: absolute;
+  right: 0;
+  box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.31);
+  
+}
+
+section.portfolio .project .big::after,
+section.portfolio .project .small::after {
+  content: '';
+  background: rgba(0, 0, 0, 0.2);
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+}
+
+section.portfolio .project .desc {
+  z-index: 9;
+  text-align: left;
+  position: absolute;
+  bottom: 30px;
+  left: 30px;
+}
+section.portfolio .project .desc h3 {
+  color: #fff;
+  font-weight: bold;
+  font-size: 20px;
+}
+section.portfolio .project .desc p {
+  font-size: 14px;
+  color: #f0f0f0;
+}

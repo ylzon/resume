@@ -28,7 +28,7 @@
     </header>
     <div class="banner" style="background-image: url(image/rs-cover.jpg)"></div>
     <main>
-        <div class="infoCard">
+        <div class="infoCard container-inner">
             <div class="pictureAndText clearfix">
                 <div class="picture">
                     <img src="./image/avatar.jpg" alt="头像">
@@ -78,40 +78,103 @@
                 </a>
             </footer>
         </div>
-        <a href="javascript:;" class="button">下载 PDF 简历</a>
-        <p>
-            Hello! I’m Lezhong Yan. Senior Web Developer specializing in front end development. Experienced with
-            all stages of the development cycle for dynamic web projects. Well-versed in numerous programming
-            languages including JavaScript, SQL, and C. Stng background in project management and customer
-            relations.
+        <p class="download container-inner">
+            <a href="javascript:;" class="button">下载 PDF 简历</a>
         </p>
-        <section>
+        <p class="about container-inner">
+            本人专注于前端开发，具有两年Web开发经验<br>
+            熟悉 JavaScript、CSS 和 HTML，熟悉 Vue、 React 和微信小程序技术栈，了解 Node、Python 和 Dart <br>
+            了解Weex和Flutter，具备一定的移动端开发能力
+        </p>
+        <section class="skills container-inner">
             <h2>专业技能</h2>
-            <ol>
-                <li>HTML 5 & CSS 3</li>
-                <li>JavaScript</li>
-                <li>React技术栈</li>
-                <li>Vue技术栈</li>
-                <li>jQuery</li>
-                <li>Dart & Flutter</li>
+            <ol class="clearfix">
+                <li>
+                    <h3>HTML 5 & CSS 3</h3>
+                    <div class="progressBar">
+                        <div class="progress" style="width: 70%;"></div>
+                    </div>
+                </li>
+                <li>
+                    <h3>JavaScript</h3>
+                    <div class="progressBar">
+                        <div class="progress" style="width: 80%;"></div>
+                    </div>
+                </li>
+                <li>
+                    <h3>React技术栈</h3>
+                    <div class="progressBar">
+                        <div class="progress" style="width: 65%;"></div>
+                    </div>
+                </li>
+                <li>
+                    <h3>Vue技术栈</h3>
+                    <div class="progressBar">
+                        <div class="progress" style="width: 60%;"></div>
+                    </div>
+                </li>
+                <li>
+                    <h3>微信小程序</h3>
+                    <div class="progressBar">
+                        <div class="progress" style="width: 55%;"></div>
+                    </div>
+                </li>
+                <li>
+                    <h3>Dart & Flutter</h3>
+                    <div class="progressBar">
+                        <div class="progress" style="width: 40%;"></div>
+                    </div>
+                </li>
             </ol>
         </section>
-        <section>
+        <section class="portfolio container-inner">
             <h2>作品集</h2>
             <nav>
-                <ol>
-                    <li>所有</li>
-                    <li>框架</li>
-                    <li>原生JS & CSS</li>
+                <ol class="clearfix">
+                    <li id="portfolio1">所有</li>
+                    <li id="portfolio2">框架</li>
+                    <li id="portfolio3">原生JS & CSS</li>
                 </ol>
+                <div id="portfolioBar" class="bar state-1">
+                    <div class="bar-inner"></div>
+                </div>
+                <script>
+                    portfolio1.onclick = function () {
+                        portfolioBar.className = 'bar state-1';
+                    }
+                    portfolio2.onclick = function () {
+                        portfolioBar.className = 'bar state-2';
+                    }
+                    portfolio3.onclick = function () {
+                        portfolioBar.className = 'bar state-3';
+                    }
+                </script>
             </nav>
-            <div class="project">
-                <div class="big"></div>
-                <div class="small"></div>
-                <div class="small"></div>
+            <div class="project ">
+                <div class="big">  
+                    <img src="./image/woks-0.jpg" alt="">
+                    <div class="desc">
+                        <h3>测试作品1</h3>
+                        <p>这是一段作品描述</p>
+                    </div>
+                </div>
+                <div class="small" style="top: 0;">
+                    <img src="./image/woks-1.jpg" alt="">
+                    <div class="desc">
+                        <h3>测试作品2</h3>
+                        <p>这是一段作品描述</p>
+                    </div>
+                </div>
+                <div class="small" style="bottom: 0px;">
+                    <img src="./image/woks-2.jpg" alt="">
+                    <div class="desc">
+                        <h3>测试作品3</h3>
+                        <p>这是一段作品描述</p>
+                    </div>
+                </div>
             </div>
         </section>
-        <section>
+        <!-- <section class="workExperience container-inner">
             <h2>工作经验</h2>
             <div class="timeline-inner">
                 <div class="timeline-box timeline-box-compact timeline-box-left">
@@ -151,7 +214,7 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </section> -->
     </main>
     <footer>
         
