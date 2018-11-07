@@ -3,7 +3,4 @@
 
 ## 访问
 
-* [https://mgss.github.io/resume/](https://mgss.github.io/resume/)
-
-## 预览
-![](https://ws4.sinaimg.cn/large/006tNbRwgy1fwxiqexa8bj31gw0q87lw.jpg)
+* [http://rs.ylzon.com](http://rs.ylzon.com)
