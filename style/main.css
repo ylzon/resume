@@ -131,14 +131,14 @@ h1, h2, h3, h4, h5, h6 {
 .banner {
   height: 515px;
   background-size: cover;
-  background-position: center;
+  background-position: top;
 }
 
 .banner::before {
   content: '';
   display: block;
   height: 100%;
-  background-color: rgba(44, 51, 64, 0.8);
+  background-color: rgba(44, 51, 64, 0.5);
   ;
 }
 
