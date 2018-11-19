@@ -11,6 +11,9 @@
 </head>
 
 <body>
+    <div class="loadingpWarp active" id="loadingpWarp">
+        <div class="loading"></div>
+    </div>
     <header class="topNavBar">
         <div class="container topNavBar-inner clearfix">
             <div class="logo" style="float: left;">
@@ -83,7 +86,7 @@
         </p>
         <p class="about container-inner">
             本人专注于前端开发，具有两年Web开发经验<br>
-            熟悉 JavaScript、CSS 和 HTML，熟悉 Vue、 React 和微信小程序技术栈，了解 Node、Python 和 Dart <br>
+            熟悉 JavaScript、CSS 和 HTML，熟悉 Vue、 React 和微信小程序技术栈，了解 Node、Python <br>
             了解Weex和Flutter，具备一定的移动端开发能力
         </p>
         <section class="skills container-inner">
@@ -220,6 +223,11 @@
         
     </footer>
     <script src="./script/main.js"></script>
+    <script>
+        setTimeout(function() {
+            loadingpWarp.classList.remove('active')
+        }, 1000)
+    </script>
 </body>
 
 </html>
