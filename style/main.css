@@ -5,61 +5,9 @@
   margin: 0;
 }
 
-.loadingpWarp {
-  width: 100vw;
-  height: 100vh;
-  position: fixed;
-  background-color: #EFEFEF;
-  display: none;
-  justify-content: center;
-  align-items: center;
-  z-index: 9;
-}
-
-.loadingpWarp.active {
-  display: flex;
-}
-
-.loading {
-  width: 100px;
-  height: 100px;
-  position: relative;
-}
-.loading::after,
-.loading::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  margin: auto;
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background-color: #000;
-  animation: s 1s linear infinite;
-}
-
-.loading::before {
-  animation-delay: 0.5s;
-}
-
-@keyframes s {
-  0%{
-    width: 0;
-    height: 0;
-    opacity: 1;
-  }
-  100% {
-    width: 100px;
-    height: 100px;
-    opacity: 0;
-  }
-}
-
 body {
   background: #EFEFEF;
+  font: 12px/1.2 tahoma,'\5FAE\8F6F\96C5\9ED1',sans-serif;
 }
 
 a {
@@ -81,8 +29,57 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: normal;
 }
 
-/* 清除浮动 */
+/* 页面加载动画 */
+.loadingpWarp {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  background-color: #EFEFEF;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 9;
+}
+.loadingpWarp.active {
+  display: flex;
+}
+.loading {
+  width: 100px;
+  height: 100px;
+  position: relative;
+}
+.loading::after,
+.loading::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #000;
+  animation: s 1s linear infinite;
+}
+.loading::before {
+  animation-delay: 0.5s;
+}
+@keyframes s {
+  0%{
+    width: 0;
+    height: 0;
+    opacity: 1;
+  }
+  100% {
+    width: 100px;
+    height: 100px;
+    opacity: 0;
+  }
+}
 
+/* 清除浮动 */
 .clearfix::after {
   content: '';
   display: block;
@@ -90,7 +87,6 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* 图标字体 */
-
 .icon {
   width: 1em;
   height: 1em;
@@ -100,7 +96,6 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* 容器 */
-
 .container {
   max-width: 1530px;
   margin: 0 auto;
@@ -111,8 +106,28 @@ h1, h2, h3, h4, h5, h6 {
   margin: 0 auto;
 }
 
-/* header - logo */
+/* topNavBar */
+.topNavBar {
+  padding: 20px 0 20px;
+  position: fixed;
+  width: 100%;
+  transition: all .2s;
+  color: #C2C5C8;
+  z-index: 8;
+}
 
+.topNavBar.sticky {
+  background-color: #fff;
+  padding: 6px;
+  color: #3D4451;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.38);
+}
+
+.topNavBar-inner {
+  padding: 0 0;
+}
+
+/* header - logo */
 .topNavBar .logo {
   font-size: 26px;
   font-family: 'Arial Black';
@@ -130,19 +145,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* header - nav */
-
-.topNavBar {
-  padding: 20px 0 20px 0;
-  position: fixed;
-  width: 100%;
-}
-
-.topNavBar-inner {
-  padding: 0 0;
-}
-
 .topNavBar nav {
-  padding-top: 7px;
+  padding-top: 0px;
 }
 
 .topNavBar nav>ul {
@@ -155,30 +159,83 @@ h1, h2, h3, h4, h5, h6 {
   float: left;
   margin-left: 17px;
   margin-right: 17px;
+  position: relative;
 }
 
-.topNavBar nav>ul>li>a {
+.topNavBar .menu>li>a {
   font-size: 16px;
   font-weight: bold;
-  color: #b7b7b7;
+  color: inherit;
   font-weight: bold;
-  border-top: 3px solid transparent;
-  border-bottom: 3px solid transparent;
-  padding-top: 5px;
-  padding-bottom: 5px;
+  padding: 5px 0;
   display: block;
   transition: all .2s;
+  position: relative;
+  padding-bottom: 6px;
 }
 
-.topNavBar nav>ul>li>a.active {
-  border-bottom: 3px solid #35AAF4;
+.topNavBar .menu>li:hover::after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background-color: #35AAF4;
+  animation: menuSlide .3s;
 }
 
-.topNavBar nav>ul>li>a:hover {
-  border-bottom: 3px solid #35AAF4;
-  color: #e6e6e6;
+@keyframes menuSlide {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
 }
 
+.topNavBar .subMenu{
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  margin-top: 3px;
+  padding: 12px 0;
+  background-color: #fff;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.24)
+}
+
+.topNavBar .menu li.active .subMenu{
+  display: block;
+  animation: subMenuSlide .3s;
+}
+
+@keyframes subMenuSlide {
+  0% {
+    margin-right: 100%;
+    opacity: 0;
+  }
+  100% {
+    margin-right: 0%;
+    opacity: 1;
+  }
+}
+.topNavBar .subMenu>li{
+  white-space: nowrap;
+}
+.topNavBar .subMenu>li>a {
+  display: block;
+  color: #3D4451;
+  line-height: 32px;
+  padding: 0 24px;
+  font-size: 14px;
+  transition: all .3s;
+}
+.topNavBar .subMenu>li>a:hover {
+  background-color: #fafafa;
+  color: #35AAF4;
+}
 /* 背景banner */
 
 .banner {

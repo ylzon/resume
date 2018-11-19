@@ -14,24 +14,37 @@
     <div class="loadingpWarp active" id="loadingpWarp">
         <div class="loading"></div>
     </div>
-    <header class="topNavBar">
+    <header class="topNavBar" id="topNavBar">
         <div class="container topNavBar-inner clearfix">
             <div class="logo" style="float: left;">
-                <span class="rs">RS</span><span class="card">card</span>
+                <a href=""><span class="rs">RS</span><span class="card">card</span></a>
             </div>
             <nav style="float: right;">
-                <ul>
-                    <li><a class="active" href="javascript:;">关于</a></li>
-                    <li><a href="javascript:;">技能</a></li>
-                    <li><a href="javascript:;">作品</a></li>
-                    <li><a href="javascript:;">工作</a></li>
+                <ul class="menu">
+                    <li>
+                        <a href="#about">关于</a>
+                    </li>
+                    <li>
+                        <a href="#skills">技能</a>
+                    </li>
+                    <li class="subMenuTigger">
+                        <a href="#portfolio">作品</a>
+                        <ul class="subMenu">
+                            <li><a href="#">作品1</a></li>
+                            <li><a href="#">作品2</a></li>
+                            <li><a href="#">作品3</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="javascript:;">工作经验</a>
+                    </li>
                 </ul>
             </nav>
         </div>
     </header>
     <div class="banner" style="background-image: url(https://ws3.sinaimg.cn/large/006tNbRwgy1fx0krljh88j31hc0u0h88.jpg)"></div>
     <main>
-        <div class="infoCard container-inner">
+        <div class="infoCard container-inner" id="about">
             <div class="pictureAndText clearfix">
                 <div class="picture">
                     <img src="./image/avatar.jpg" alt="头像">
@@ -89,7 +102,7 @@
             熟悉 JavaScript、CSS 和 HTML，熟悉 Vue、 React 和微信小程序技术栈，了解 Node、Python <br>
             了解Weex和Flutter，具备一定的移动端开发能力
         </p>
-        <section class="skills container-inner">
+        <section class="skills container-inner" id="skills">
             <h2>专业技能</h2>
             <ol class="clearfix">
                 <li>
@@ -130,7 +143,7 @@
                 </li>
             </ol>
         </section>
-        <section class="portfolio container-inner">
+        <section class="portfolio container-inner" id="portfolio">
             <h2>作品集</h2>
             <nav>
                 <ol class="clearfix">
