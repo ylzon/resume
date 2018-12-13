@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>JS Bin</title>
+    <style>
+        .banner  {
+            width: 828px;
+            overflow: hidden;
+            position: relative;
+        }
+        .banner .images {
+            display: flex;
+            align-items: flex-start;
+            transition: all .3s;
+        }
+        .banner .dot {
+            position: absolute;
+            left: 50%;
+            bottom: 12px;
+            transform: translate(-50%);
+        }
+        .banner .dot b {
+            width: 8px;
+            height: 8px;
+            margin: 0 4px;
+            cursor: pointer;
+            border-radius: 50%;
+            background-color: #000;
+            display: inline-block;
+            transition: all .3s;
+        }
+        .banner .dot b.active {
+            box-shadow: 0 0 2px 4px rgba(0, 0, 0, .1);
+            background-color: #fff;
+            transform: scale(1.2);
+        }
+
+    </style>
+</head>
+<body>
+    <div class="banner">
+        <div class="images" id="images">
+            <img draggable="false" src="https://ws4.sinaimg.cn/large/006tNbRwgy1fy5hvarleij30n00cddgd.jpg" width=828 height=480 alt="轮播图1">
+            <img draggable="false" src="https://ws1.sinaimg.cn/large/006tNbRwgy1fy5humlgz1j30n00cdq3n.jpg" width=828 height=480 alt="轮播图2">
+            <img draggable="false" src="https://ws2.sinaimg.cn/large/006tNbRwgy1fy5hw5xvw8j30n00cd3zr.jpg" width=828 height=480 alt="轮播图3">
+            <img draggable="false" src="https://ws4.sinaimg.cn/large/006tNbRwgy1fy5hvarleij30n00cddgd.jpg" width=828 height=480 alt="轮播图1">
+            <img draggable="false" src="https://ws1.sinaimg.cn/large/006tNbRwgy1fy5humlgz1j30n00cdq3n.jpg" width=828 height=480 alt="轮播图2">
+            <img draggable="false" src="https://ws2.sinaimg.cn/large/006tNbRwgy1fy5hw5xvw8j30n00cd3zr.jpg" width=828 height=480 alt="轮播图3">
+        </div>
+        <div class="dot" id="dot"></div>
+    </div>
+    <script src="//cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+        let allDots = null;
+        let timerId = undefined;
+        let nowIndex = 0;
+        let dotSize = 0;
+        const $images = $('#images');
+        const $dot = $('#dot');
+        const setActive = ($dot) => {
+            $dot.addClass('active')
+                .siblings('.active')
+                .removeClass('active')
+        }
+        const setTimer = () => {
+            return setInterval(() => {
+                nowIndex ++;
+                allDots.eq(nowIndex % dotSize).trigger('click')
+            }, 1000)
+        }
+
+        // 自动生成点
+        for (let index = 0; index < $images.children().length; index++) {
+            const $span = $('<b></b>');
+            $dot.append($span);
+        }
+        
+        // 点击点显示对应轮播图
+        allDots = $dot.children();
+        for (let index = 0; index < allDots.length; index++) {
+            $(allDots[index]).on('click', (event) => {
+                const i = $(event.currentTarget).index()
+                const p = i * -828
+                $('#images').css({
+                    transform: `translate(${p}px)`,
+                })
+                nowIndex = i
+                setActive($(allDots.eq(nowIndex)))
+            })
+        }
+
+        // 自动轮播
+        dotSize = allDots.length;
+        allDots.eq(nowIndex % dotSize).trigger('click')
+        timerId = setTimer()
+
+        // 鼠标移入自动停止鼠标移除继续轮播
+        $('.banner').on('mouseenter', function() {
+            window.clearInterval(timerId)
+        })
+        $('.banner').on('mouseleave', function() {
+            timerId = setTimer()
+        })
+    </script>
+</body>
+</html>
