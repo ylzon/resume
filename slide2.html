@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>JS Bin</title>
+    <style>
+        h1 {
+            text-align: center;
+        }
+        .banner  {
+            width: 828px;
+            height: 480px;
+            overflow: hidden;
+            position: relative;
+            margin: 40px auto;
+        }
+        .banner .images {
+            height: 100%;
+            position: relative;
+        }
+        .banner .images > img {
+            position: absolute;
+            top: 0;
+            transition: all 1s;
+        }
+        .banner .images > img.active {
+            left: 0;
+            transform: translateX(0);
+            z-index: 1;
+        }
+        .banner .images > img.prev {
+            transform: translateX(-100%);
+            z-index: 1;
+        }
+        .banner .images > img.next {
+            transform: translateX(100%);
+        }
+
+        .banner .dot {
+            z-index: 2;
+            position: absolute;
+            left: 50%;
+            bottom: 12px;
+            transform: translate(-50%);
+        }
+        .banner .dot b {
+            width: 8px;
+            height: 8px;
+            margin: 0 4px;
+            cursor: pointer;
+            border-radius: 50%;
+            background-color: #000;
+            display: inline-block;
+            transition: all .3s;
+        }
+        .banner .dot b.active {
+            box-shadow: 0 0 2px 4px rgba(0, 0, 0, .1);
+            background-color: #fff;
+            transform: scale(1.2);
+        }
+
+    </style>
+</head>
+<body>
+    <h1>无缝轮播</h1>
+    <div class="banner">
+        <div class="images" id="images">
+            <img draggable="false" src="https://ws4.sinaimg.cn/large/006tNbRwgy1fy5hvarleij30n00cddgd.jpg" width=828 height=480 alt="轮播图1">
+            <img draggable="false" src="https://ws1.sinaimg.cn/large/006tNbRwgy1fy5humlgz1j30n00cdq3n.jpg" width=828 height=480 alt="轮播图2">
+            <img draggable="false" src="https://ws2.sinaimg.cn/large/006tNbRwgy1fy5hw5xvw8j30n00cd3zr.jpg" width=828 height=480 alt="轮播图3">
+        </div>
+        <div class="dot" id="dot"></div>
+    </div>
+    <script src="//cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+        let allDots = null;
+        let timerId = undefined;
+        let nowIndex = 1;
+        const $images = $('#images');
+        const setActive = ($iamge) => {
+            return $iamge.removeClass('prev next').addClass('active')
+        }
+        const setPrev = ($iamge) => {
+            return $iamge.removeClass('active next').addClass('prev')
+        }
+        const setNext = ($iamge) => {
+            return $iamge.removeClass('active prev').addClass('next')
+        }
+        const setTimer = () => {
+            return setInterval(() => {
+                setPrev(getImage(nowIndex)).one('transitionend', (e) => {
+                    setNext($(e.currentTarget))
+                })
+                setActive(getImage(nowIndex + 1))
+                nowIndex ++;
+            }, 2000)
+        }
+        const filter = (n) => {
+            const nLength = $images.children().length
+            if (n > nLength) {
+                n = n % nLength
+                if (n === 0) {
+                    n = nLength
+                }
+            }
+            return n
+        }
+        const getImage = (n) => {
+            return $(`.images > img:nth-child(${filter(n)})`)
+        }
+        const init = () => {
+            nowIndex = 1;
+
+            // 初始化类
+            getImage(nowIndex).addClass('active')
+                .siblings().addClass('next');
+        }
+        
+        init()
+        timerId = setTimer()
+
+        // 鼠标移入自动停止鼠标移除继续轮播
+        $('.banner').on('mouseenter', function() {
+            window.clearInterval(timerId)
+        })
+        $('.banner').on('mouseleave', function() {
+            timerId = setTimer()
+        })
+    </script>
+</body>
+</html>
