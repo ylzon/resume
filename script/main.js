@@ -32,14 +32,14 @@ function findClosest () {
     // 滚动到对应位置的元素显示，且导航栏响应高亮 
     let minIndex = 0;
     const specialTags = document.querySelectorAll('[data-x]');
-    const seeHeight = document.documentElement.clientHeight;
+    const seeHeight = window.innerHeight;
     const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
     
     specialTags.forEach((item, index) => {
         const current = Math.abs(item.offsetTop - window.scrollY);
         const min = Math.abs(specialTags[minIndex].offsetTop - window.scrollY);
         specialTags[index].classList.remove('active')
-        if(specialTags[index].offsetTop < seeHeight + scrollTop - 500) {
+        if(specialTags[index].offsetTop < seeHeight + scrollTop - 400) {
             minIndex = index;
         }
     })
@@ -69,13 +69,13 @@ for (let i=0; i < aTags.length; i++) {
         event.preventDefault();
         const top = document.querySelector(event.currentTarget.getAttribute('href')).offsetTop;
         const currentTop = window.scrollY;
-        const targetTop = top - 80;
+        const targetTop = top - window.innerHeight / 2 + 100;
         const s = targetTop - currentTop;
         const t = Math.abs((s/100) * 200);
         // @tween.js实现
         var coords = { x: currentTop }; 
         var tween = new TWEEN.Tween(coords) 
-                .to({ x: targetTop}, t > 500 ? 500 : t) 
+                .to({ x: targetTop}, t > 600 ? 600 : t) 
                 .easing(TWEEN.Easing.Quadratic.InOut) 
                 .onUpdate(function() {
                     window.scrollTo(0, coords.x)

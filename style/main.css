@@ -387,6 +387,7 @@ body>main {
 
 .download {
   text-align: center;
+  margin-top: 80px;
 }
 
 .download a {
@@ -424,7 +425,7 @@ section.skills h2, section.portfolio h2, section.workExperience h2 {
   color: #3D4451;
   text-align: center;
   letter-spacing: 4px;
-  margin: 70px 0 25px 0;
+  margin: 100px 0 25px 0;
 }
 
 section.skills ol {
@@ -477,8 +478,7 @@ section.skills.offset li .progressBar .progress {
 
 section.portfolio {
   text-align: center;
-  margin-bottom: 200px;
-
+  margin-bottom: 300px;
 }
 
 section.portfolio nav {
