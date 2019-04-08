@@ -28,6 +28,33 @@ ul, ol {
 h1, h2, h3, h4, h5, h6 {
   font-weight: normal;
 }
+[data-x] {
+  transform: translateY(0); 
+  opacity: 1;
+  transition: all 0.5s;
+}
+
+[data-x].offset {
+  opacity: 0;
+  transform: translateY(100px); 
+}
+
+/* [data-x].active {
+  border: 10px solid red;
+} */
+
+/* [data-x].animate {
+  animation: slideUp 0.5s;
+} */
+
+/* @keyframes slideUp {
+  0% {
+    transform: translateY(-30px); 
+  }
+  100% {
+    transform: translateY(0); 
+  }
+} */
 
 /* 页面加载动画 */
 .loadingpWarp {
@@ -173,7 +200,7 @@ h1, h2, h3, h4, h5, h6 {
   position: relative;
   padding-bottom: 6px;
 }
-
+.topNavBar .menu>li.highlight::after,
 .topNavBar .menu>li:hover::after {
   content: '';
   display: block;
@@ -429,6 +456,7 @@ section.skills li .progressBar {
   background-color: #CEE4F6;
   position: relative;
   border-radius: 3px;
+  overflow: hidden;
 }
 
 section.skills li .progressBar .progress {
@@ -439,6 +467,12 @@ section.skills li .progressBar .progress {
   position: absolute;
   left: 0;
   top: 0;
+  transition: all 0.5s;
+  transform: translateX(0)
+}
+
+section.skills.offset li .progressBar .progress {
+  transform: translateX(-100%)
 }
 
 section.portfolio {
