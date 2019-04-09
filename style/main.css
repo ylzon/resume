@@ -419,7 +419,7 @@ body>main {
 
 /* 模块 */
 
-section.skills h2, section.portfolio h2, section.workExperience h2 {
+section.skills h2, section.portfolio h2, section.message h2, section.workExperience h2 {
   font-size: 28px;
   font-weight: 700;
   color: #3D4451;
@@ -478,7 +478,7 @@ section.skills.offset li .progressBar .progress {
 
 section.portfolio {
   text-align: center;
-  margin-bottom: 300px;
+  /* margin-bottom: 300px; */
 }
 
 section.portfolio nav {
@@ -590,4 +590,97 @@ section.portfolio .project .desc h3 {
 section.portfolio .project .desc p {
   font-size: 14px;
   color: #f0f0f0;
+}
+
+section.message{
+  max-width: 940px;
+  margin: 20px auto 200px;
+  box-sizing: border-box;
+}
+
+section.message > form {
+  margin-top: 41px;
+  margin-bottom: 35px;
+  display: flex;
+  justify-content: center;
+}
+section.message > form > div > label{
+  display: inline-block;
+  max-width: 100%;
+  margin-bottom: 5px;
+  font-weight: 700;
+  font-size: 16px;
+  margin-right: 8px;
+}
+section.message > form > div > input{
+  margin-right: 20px;
+  height: 22px;
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 1.42857143;
+  color: #555;
+  background-color: #fff;
+  background-image: none;
+  border: 1px solid #ccc;
+  transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+}
+section.message > form > div > input:focus{
+  border-color: #66afe9;
+  outline: 0;
+  box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102,175,233,.6);
+}
+section.message > form > label >input[type=text]{
+  margin-bottom: -5px;
+  border: 0;
+  height: 45px;
+  line-height: 45px;
+  padding-left: 14px;
+  background: #fff;
+  font-weight: lighter;
+  box-shadow: -3px 4px 4px -4px rgba(51,51,51,0.35);
+  font-size: 18px;
+}
+section.message > form > label > .inputName{
+  width: 110px;
+}
+section.message > form > label > .inputContent{
+  width: 570px;
+}
+section.message > form > button{
+  text-align: center;
+  width: 75px;
+  height: 34px;
+  background: #35AAF4;
+  font-size: 18px;
+  border: 0;
+  color: white;
+  transition: all 0.3s;
+}
+section.message > form > button:hover{
+  background: #000;
+  color: white;
+  box-shadow: 1px 1px 1px 0 rgba(0,0,0,.2);
+}
+section.message > form > button:focus{
+  outline: none;
+  color: white;
+  border: 0;
+  background: #444;
+}
+section.message > form > label >input[type=text]:focus{
+  outline: none;
+}
+section.message > ol {
+  box-shadow: 0 1px 6px 4px rgba(102, 102, 102, 0.1);
+  background: #fff; }
+section.message > ol > li {
+  padding: 14px 0 12px 16px;
+  border-bottom: 1px solid #ddd; }
+section.message > ol > li > .name{
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 6px;
+}
+section.message > ol > li > .content{
+  color: #777;
 }

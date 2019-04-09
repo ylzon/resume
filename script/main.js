@@ -85,3 +85,54 @@ for (let i=0; i < aTags.length; i++) {
 };
 
 
+// 留言板功能
+const APP_ID = 'pwnVQWLqEpj745QMvmDhlNk0-gzGzoHsz';
+const APP_KEY = 'W8aMTPddDF7RYogyiADVaM7X';
+
+AV.init({
+  appId: APP_ID,
+  appKey: APP_KEY
+});
+
+
+const postMessageForm = document.querySelector('#postMessageForm');
+const messageList = document.querySelector('#messageList');
+
+postMessageForm.addEventListener('submit', (e)=>{
+    e.preventDefault()
+    const name = postMessageForm.querySelector('input[name=name]');
+    const content = postMessageForm.querySelector('input[name=content]');
+    const Message = AV.Object.extend('Message');
+    const message = new Message();
+    message.save({
+      name: name.value,
+      content: content.value,
+    }).then(function(object) {
+      console.log('发布成功！')
+      appendMessage(object.attributes)
+      name.value = '';
+      content.value = '';
+    })
+})
+
+const query = new AV.Query('Message');
+query.find().then(function (messages) {
+    const messageArray = messages.map(item=> item.attributes)
+    console.log('123', messageArray)
+    messageArray.forEach(item => {        
+        appendMessage(item)
+    })
+})
+
+function appendMessage({name, content}) {
+    const li = document.createElement('li');
+    const nameDiv = document.createElement('div');
+    const contentDiv = document.createElement('div');
+    nameDiv.classList.add('name')
+    contentDiv.classList.add('content')
+    nameDiv.innerText = name;
+    contentDiv.innerText = content;
+    li.append(nameDiv)
+    li.append(contentDiv)
+    messageList.append(li)
+}

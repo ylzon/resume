@@ -36,13 +36,14 @@
                         </ul>
                     </li>
                     <li>
-                        <a href="javascript:;">工作经验</a>
+                        <a href="#message">留言</a>
                     </li>
                 </ul>
             </nav>
         </div>
     </header>
-    <div class="banner" style="background-image: url(https://ws3.sinaimg.cn/large/006tNbRwgy1fx0krljh88j31hc0u0h88.jpg)"></div>
+    <div class="banner"
+        style="background-image: url(https://ws3.sinaimg.cn/large/006tNbRwgy1fx0krljh88j31hc0u0h88.jpg)"></div>
     <main>
         <div data-x class="infoCard container-inner" id="about">
             <div class="pictureAndText clearfix">
@@ -75,7 +76,7 @@
                 <a href="javascript:;">
                     <svg class="icon" aria-hidden="true">
                         <use xlink:href="#icon-wechat-fill"></use>
-                    </svg>    
+                    </svg>
                 </a>
                 <a href="javascript:;">
                     <svg class="icon" aria-hidden="true">
@@ -167,7 +168,7 @@
                 </script>
             </nav>
             <div class="project ">
-                <div class="big">  
+                <div class="big">
                     <img src="./image/woks-0.jpg" alt="">
                     <div class="desc">
                         <h3>测试作品1</h3>
@@ -190,49 +191,24 @@
                 </div>
             </div>
         </section>
-        <!-- <section class="workExperience container-inner">
-            <h2>工作经验</h2>
-            <div class="timeline-inner">
-                <div class="timeline-box timeline-box-compact timeline-box-left">
-                    <span class="dot"></span>
-                    <div class="timeline-box-inner">
-                        <span class="arrow"></span>
-                        <div class="date">2012 - 2014</div>
-                        <h3>XXX有限公司</h3>
-                        <h4>
-                            <a href="">前端开发工程师</a>
-                        </h4>
-                        <p>This was beginning of my career.  Developed, managed, operated and promoted an Internet business.Handled customer support issues.</p>
-                    </div>
+        <section data-x class="message" id="message">
+            <h2>留言</h2>
+            <form id="postMessageForm" method="POST">
+                <div class="form-group">
+                    <label for="exampleInputName2">昵称</label>
+                    <input autocomplete="off" type="text" class="form-control" placeholder="请输入昵称" name="name">
                 </div>
-                <div class="timeline-box timeline-box-compact timeline-box-right">
-                    <span class="dot"></span>
-                    <div class="timeline-box-inner animate-left animated">
-                        <span class="arrow"></span>
-                        <div class="date">2017.3 - 2017.8</div>
-                        <h3>XX有限公司</h3>
-                        <h4>
-                            <a href="">前端开发（实习）</a>
-                        </h4>
-                        <p>This was beginning of my career.  Developed, managed, operated and promoted an Internet business.Handled customer support issues.</p>
-                    </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail2">内容</label>
+                    <input autocomplete="off" type="text" class="form-control" placeholder="请输入留言" name="content">
                 </div>
-                <div class="timeline-box timeline-box-compact timeline-box-left">
-                    <span class="dot"></span>
-                    <div class="timeline-box-inner">
-                        <span class="arrow"></span>
-                        <div class="date">2012 - 2014</div>
-                        <h3>XXX有限公司</h3>
-                        <h4>
-                            <a href="">前端开发工程师</a>
-                        </h4>
-                        <p>This was beginning of my career.  Developed, managed, operated and promoted an Internet business.Handled customer support issues.</p>
-                    </div>
-                </div>
-            </div>
-        </section> -->
+                <button type="submit" class="btn btn-default">留言</button>
+            </form>
+            <ol id="messageList"></ol>
+        </section>
     </main>
     <script src="https://cdn.bootcss.com/tween.js/r14/Tween.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/leancloud-storage@3.12.0/dist/av-min.js"></script>
     <script src="./script/main.js"></script>
 </body>
 
