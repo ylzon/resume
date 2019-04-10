@@ -2,191 +2,192 @@
 <html lang="zh-CN">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>个人简历</title>
-    <link rel="stylesheet" href="./lib/swiper.min.css">
-    <link rel="stylesheet" href="./styles/main.css">
-    <script src="./lib/font_902768_2yskmbaad1c.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>个人简历</title>
+  <link rel="stylesheet" href="./lib/swiper.min.css">
+  <link rel="stylesheet" href="./styles/main.css">
+  <script src="./lib/font_902768_2yskmbaad1c.js"></script>
 </head>
 
 <body>
-    <div class="loadingpWarp" id="loadingpWarp">
-        <div class="loading"></div>
+  <div class="loadingpWarp" id="loadingpWarp">
+    <div class="loading"></div>
+  </div>
+  <header class="topNavBar" id="topNavBar">
+    <div class="container topNavBar-inner clearfix">
+      <div class="logo" style="float: left;">
+        <a href=""><span class="rs">RS</span><span class="card">card</span></a>
+      </div>
+      <nav style="float: right;">
+        <ul class="menu">
+          <li class="highlight">
+            <a href="#about">关于</a>
+          </li>
+          <li>
+            <a href="#skills">技能</a>
+          </li>
+          <li>
+            <a href="#portfolio">作品</a>
+          </li>
+          <li>
+            <a href="#message">留言</a>
+          </li>
+        </ul>
+      </nav>
     </div>
-    <header class="topNavBar" id="topNavBar">
-        <div class="container topNavBar-inner clearfix">
-            <div class="logo" style="float: left;">
-                <a href=""><span class="rs">RS</span><span class="card">card</span></a>
-            </div>
-            <nav style="float: right;">
-                <ul class="menu">
-                    <li class="highlight">
-                        <a href="#about">关于</a>
-                    </li>
-                    <li>
-                        <a href="#skills">技能</a>
-                    </li>
-                    <li class="subMenuTigger">
-                        <a href="#portfolio">作品</a>
-                        <ul class="subMenu">
-                            <li><a href="#">作品1</a></li>
-                            <li><a href="#">作品2</a></li>
-                            <li><a href="#">作品3</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="#message">留言</a>
-                    </li>
-                </ul>
-            </nav>
+  </header>
+  <div class="banner" style="background-image: url(https://ws3.sinaimg.cn/large/006tNbRwgy1fx0krljh88j31hc0u0h88.jpg)">
+  </div>
+  <main>
+    <div data-x class="infoCard container-inner offset" id="about">
+      <div class="pictureAndText clearfix">
+        <div class="picture">
+          <img src="./images/avatar.jpg" alt="头像">
         </div>
-    </header>
-    <div class="banner"
-        style="background-image: url(https://ws3.sinaimg.cn/large/006tNbRwgy1fx0krljh88j31hc0u0h88.jpg)"></div>
-    <main>
-        <div data-x class="infoCard container-inner offset" id="about">
-            <div class="pictureAndText clearfix">
-                <div class="picture">
-                    <img src="./images/avatar.jpg" alt="头像">
-                </div>
-                <div class="text">
-                    <span class="welcome">HELLO</span>
-                    <h1>闫乐忠</h1>
-                    <p>前端开发工程师</p>
-                    <hr>
-                    <dl class="clearfix">
-                        <dt>年龄</dt>
-                        <dd>23</dd>
-                        <dt>所在城市</dt>
-                        <dd>长沙</dd>
-                        <dt>邮箱</dt>
-                        <dd>yanlezhong@gmail.com</dd>
-                        <dt>手机</dt>
-                        <dd>13788888888</dd>
-                    </dl>
-                </div>
-            </div>
-            <footer class="media">
-                <a href="javascript:;">
-                    <svg class="icon" aria-hidden="true">
-                        <use xlink:href="#icon-github-fill"></use>
-                    </svg>
-                </a>
-                <a href="javascript:;">
-                    <svg class="icon" aria-hidden="true">
-                        <use xlink:href="#icon-wechat-fill"></use>
-                    </svg>
-                </a>
-                <a href="javascript:;">
-                    <svg class="icon" aria-hidden="true">
-                        <use xlink:href="#icon-QQ"></use>
-                    </svg>
-                </a>
-                <a href="javascript:;">
-                    <svg class="icon" aria-hidden="true">
-                        <use xlink:href="#icon-weibo"></use>
-                    </svg>
-                </a>
-                <a href="javascript:;">
-                    <svg class="icon" aria-hidden="true">
-                        <use xlink:href="#icon-wangzhan"></use>
-                    </svg>
-                </a>
-            </footer>
+        <div class="text">
+          <span class="welcome">HELLO</span>
+          <h1>闫乐忠</h1>
+          <p>前端开发工程师</p>
+          <hr>
+          <dl class="clearfix">
+            <dt>年龄</dt>
+            <dd>23</dd>
+            <dt>所在城市</dt>
+            <dd>长沙</dd>
+            <dt>邮箱</dt>
+            <dd>yanlezhong@gmail.com</dd>
+            <dt>手机</dt>
+            <dd>13788888888</dd>
+          </dl>
         </div>
-        <p class="download container-inner">
-            <a href="javascript:;" class="button">下载 PDF 简历</a>
-        </p>
-        <p class="about container-inner">
-            本人专注于前端开发，具有两年Web开发经验<br>
-            熟悉 JavaScript、CSS 和 HTML，熟悉 Vue、 React 和微信小程序技术栈，了解 Node、Python <br>
-            了解Weex和Flutter，具备一定的移动端开发能力
-        </p>
-        <section data-x class="skills container-inner offset" id="skills">
-            <h2>专业技能</h2>
-            <ol class="clearfix">
-                <li>
-                    <h3>HTML 5 & CSS 3</h3>
-                    <div class="progressBar">
-                        <div class="progress" style="width: 70%;"></div>
-                    </div>
-                </li>
-                <li>
-                    <h3>JavaScript</h3>
-                    <div class="progressBar">
-                        <div class="progress" style="width: 80%;"></div>
-                    </div>
-                </li>
-                <li>
-                    <h3>React技术栈</h3>
-                    <div class="progressBar">
-                        <div class="progress" style="width: 65%;"></div>
-                    </div>
-                </li>
-                <li>
-                    <h3>Vue技术栈</h3>
-                    <div class="progressBar">
-                        <div class="progress" style="width: 60%;"></div>
-                    </div>
-                </li>
-                <li>
-                    <h3>微信小程序</h3>
-                    <div class="progressBar">
-                        <div class="progress" style="width: 55%;"></div>
-                    </div>
-                </li>
-                <li>
-                    <h3>Dart & Flutter</h3>
-                    <div class="progressBar">
-                        <div class="progress" style="width: 40%;"></div>
-                    </div>
-                </li>
-            </ol>
-        </section>
-        <section data-x class="portfolio container-inner offset" id="portfolio">
-            <h2>作品集</h2>
-            <div class="swiper-container">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                        <img src="./images/web-cv.jpg" alt="简历生成器" class="swiper-lazy">
-                        <div class="swiper-lazy-preloader"></div>
-                    </div>
-                    <div class="swiper-slide">
-                        <img src="./images/canvas.jpg" alt="在线画板" class="swiper-lazy">
-                        <div class="swiper-lazy-preloader"></div>
-                    </div>
-                    <div class="swiper-slide">
-                        <img src="./images/nav.jpg" alt="仿苹果风轮播" class="swiper-lazy">
-                        <div class="swiper-lazy-preloader"></div>
-                    </div>
-                </div>
-                <div class="swiper-pagination"></div>
-                <div class="swiper-button-prev"></div>
-                <div class="swiper-button-next"></div>
+      </div>
+      <footer class="media">
+        <a href="javascript:;">
+          <svg class="icon" aria-hidden="true">
+            <use xlink:href="#icon-github-fill"></use>
+          </svg>
+        </a>
+        <a href="javascript:;">
+          <svg class="icon" aria-hidden="true">
+            <use xlink:href="#icon-wechat-fill"></use>
+          </svg>
+        </a>
+        <a href="javascript:;">
+          <svg class="icon" aria-hidden="true">
+            <use xlink:href="#icon-QQ"></use>
+          </svg>
+        </a>
+        <a href="javascript:;">
+          <svg class="icon" aria-hidden="true">
+            <use xlink:href="#icon-weibo"></use>
+          </svg>
+        </a>
+        <a href="javascript:;">
+          <svg class="icon" aria-hidden="true">
+            <use xlink:href="#icon-wangzhan"></use>
+          </svg>
+        </a>
+      </footer>
+    </div>
+    <p class="download container-inner">
+      <a href="javascript:;" class="button">下载 PDF 简历</a>
+    </p>
+    <p class="about container-inner">
+      本人专注于前端开发，具有两年Web开发经验<br>
+      熟悉 JavaScript、CSS 和 HTML，熟悉 Vue、 React 和微信小程序技术栈，了解 Node、Python <br>
+      了解Weex和Flutter，具备一定的移动端开发能力
+    </p>
+    <section data-x class="skills container-inner offset" id="skills">
+      <h2>专业技能</h2>
+      <ol class="clearfix">
+        <li>
+          <h3>HTML 5 & CSS 3</h3>
+          <div class="progressBar">
+            <div class="progress" style="width: 70%;"></div>
+          </div>
+        </li>
+        <li>
+          <h3>JavaScript</h3>
+          <div class="progressBar">
+            <div class="progress" style="width: 80%;"></div>
+          </div>
+        </li>
+        <li>
+          <h3>React技术栈</h3>
+          <div class="progressBar">
+            <div class="progress" style="width: 65%;"></div>
+          </div>
+        </li>
+        <li>
+          <h3>Vue技术栈</h3>
+          <div class="progressBar">
+            <div class="progress" style="width: 60%;"></div>
+          </div>
+        </li>
+        <li>
+          <h3>微信小程序</h3>
+          <div class="progressBar">
+            <div class="progress" style="width: 55%;"></div>
+          </div>
+        </li>
+        <li>
+          <h3>Dart & Flutter</h3>
+          <div class="progressBar">
+            <div class="progress" style="width: 40%;"></div>
+          </div>
+        </li>
+      </ol>
+    </section>
+    <section data-x class="portfolio container-inner offset" id="portfolio">
+      <h2>作品集</h2>
+      <div id="slides">
+        <div class="swiper-container">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <img src="./images/web-cv.jpg" alt="简历生成器" class="swiper-lazy">
+              <div class="swiper-lazy-preloader"></div>
             </div>
-        </section>
-        <section data-x class="message container-inner offset" id="message">
-            <h2>留言</h2>
-            <form id="postMessageForm" method="POST">
-                <div class="form-group">
-                    <label for="exampleInputName2">昵称</label>
-                    <input autocomplete="off" type="text" class="form-control" placeholder="请输入昵称" name="name">
-                </div>
-                <div class="form-group">
-                    <label for="exampleInputEmail2">内容</label>
-                    <input autocomplete="off" type="text" class="form-control" placeholder="请输入留言" name="content">
-                </div>
-                <button type="submit" class="btn btn-default">留言</button>
-            </form>
-            <ol id="messageList"></ol>
-        </section>
-    </main>
-    <script src="./lib/Tween.min.js"></script>
-    <script src="./lib/av-min.js"></script>
-    <script src="./lib/swiper.min.js"></script>
-    <script src="./scripts/main.js"></script>
+            <div class="swiper-slide">
+              <img src="./images/canvas.jpg" alt="在线画板" class="swiper-lazy">
+              <div class="swiper-lazy-preloader"></div>
+            </div>
+            <div class="swiper-slide">
+              <img src="./images/nav.jpg" alt="仿苹果风轮播" class="swiper-lazy">
+              <div class="swiper-lazy-preloader"></div>
+            </div>
+          </div>
+          <div class="swiper-pagination"></div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+        </div>
+      </div>
+    </section>
+    <section data-x class="message container-inner offset" id="message">
+      <h2>留言</h2>
+      <form id="postMessageForm" method="POST">
+        <div class="form-group">
+          <label for="exampleInputName2">昵称</label>
+          <input autocomplete="off" type="text" class="form-control" placeholder="请输入昵称" name="name">
+        </div>
+        <div class="form-group">
+          <label for="exampleInputEmail2">内容</label>
+          <input autocomplete="off" type="text" class="form-control" placeholder="请输入留言" name="content">
+        </div>
+        <button type="submit" class="btn btn-default">留言</button>
+      </form>
+      <ol id="messageList"></ol>
+    </section>
+  </main>
+  <script src="./lib/Tween.min.js"></script>
+  <script src="./lib/av-min.js"></script>
+  <script src="./lib/swiper.min.js"></script>
+  <script src="./scripts/init-swiper.js"></script>
+  <script src="./scripts/sticky-topbar.js"></script>
+  <script src="./scripts/auto-slide-up.js"></script>
+  <script src="./scripts/smoothly-navigation.js"></script>
+  <script src="./scripts/message.js"></script>
 </body>
 
 </html>
