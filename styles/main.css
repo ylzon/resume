@@ -1,5 +1,4 @@
 /* 全局样式 */
-
 * {
   padding: 0;
   margin: 0;
@@ -28,6 +27,15 @@ ul, ol {
 h1, h2, h3, h4, h5, h6 {
   font-weight: normal;
 }
+
+/* 清除浮动 */
+.clearfix::after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+/* 全局动画 */
 [data-x] {
   transform: translateY(0); 
   opacity: 1;
@@ -37,80 +45,6 @@ h1, h2, h3, h4, h5, h6 {
 [data-x].offset {
   opacity: 0;
   transform: translateY(40px); 
-}
-
-/* [data-x].active {
-  border: 10px solid red;
-} */
-
-/* [data-x].animate {
-  animation: slideUp 0.5s;
-} */
-
-/* @keyframes slideUp {
-  0% {
-    transform: translateY(-30px); 
-  }
-  100% {
-    transform: translateY(0); 
-  }
-} */
-
-/* 页面加载动画 */
-.loadingpWarp {
-  width: 100vw;
-  height: 100vh;
-  position: fixed;
-  background-color: #EFEFEF;
-  display: none;
-  justify-content: center;
-  align-items: center;
-  z-index: 9;
-}
-.loadingpWarp.active {
-  display: flex;
-}
-.loading {
-  width: 100px;
-  height: 100px;
-  position: relative;
-}
-.loading::after,
-.loading::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  margin: auto;
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background-color: #000;
-  animation: s 1s linear infinite;
-}
-.loading::before {
-  animation-delay: 0.5s;
-}
-@keyframes s {
-  0%{
-    width: 0;
-    height: 0;
-    opacity: 1;
-  }
-  100% {
-    width: 100px;
-    height: 100px;
-    opacity: 0;
-  }
-}
-
-/* 清除浮动 */
-.clearfix::after {
-  content: '';
-  display: block;
-  clear: both;
 }
 
 /* 图标字体 */
