@@ -118,7 +118,6 @@ postMessageForm.addEventListener('submit', (e)=>{
 const query = new AV.Query('Message');
 query.find().then(function (messages) {
     const messageArray = messages.map(item=> item.attributes)
-    console.log('123', messageArray)
     messageArray.forEach(item => {        
         appendMessage(item)
     })
@@ -136,3 +135,25 @@ function appendMessage({name, content}) {
     li.append(contentDiv)
     messageList.append(li)
 }
+
+new Swiper ('.swiper-container', {
+    // Optional parameters
+    loop: true,
+
+    // Disable preloading of all images
+    preloadImages: false,
+    // Enable lazy loading
+    lazy: true,
+
+    // If we need pagination
+    pagination: {
+      el: '.swiper-pagination',
+    },
+
+    // Navigation arrows
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+      clickable: true,
+    },
+})

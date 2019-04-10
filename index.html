@@ -6,8 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>个人简历</title>
+    <link rel="stylesheet" href="./lib/swiper.min.css">
     <link rel="stylesheet" href="./style/main.css">
-    <script src="//at.alicdn.com/t/font_902768_2yskmbaad1c.js"></script>
+    <script src="./lib/font_902768_2yskmbaad1c.js"></script>
 </head>
 
 <body>
@@ -45,7 +46,7 @@
     <div class="banner"
         style="background-image: url(https://ws3.sinaimg.cn/large/006tNbRwgy1fx0krljh88j31hc0u0h88.jpg)"></div>
     <main>
-        <div data-x class="infoCard container-inner" id="about">
+        <div data-x class="infoCard container-inner offset" id="about">
             <div class="pictureAndText clearfix">
                 <div class="picture">
                     <img src="./image/avatar.jpg" alt="头像">
@@ -103,7 +104,7 @@
             熟悉 JavaScript、CSS 和 HTML，熟悉 Vue、 React 和微信小程序技术栈，了解 Node、Python <br>
             了解Weex和Flutter，具备一定的移动端开发能力
         </p>
-        <section data-x class="skills container-inner" id="skills">
+        <section data-x class="skills container-inner offset" id="skills">
             <h2>专业技能</h2>
             <ol class="clearfix">
                 <li>
@@ -144,54 +145,29 @@
                 </li>
             </ol>
         </section>
-        <section data-x class="portfolio container-inner" id="portfolio">
+        <section data-x class="portfolio container-inner offset" id="portfolio">
             <h2>作品集</h2>
-            <nav>
-                <ol class="clearfix">
-                    <li id="portfolio1">所有</li>
-                    <li id="portfolio2">框架</li>
-                    <li id="portfolio3">原生JS & CSS</li>
-                </ol>
-                <div id="portfolioBar" class="bar state-1">
-                    <div class="bar-inner"></div>
-                </div>
-                <script>
-                    portfolio1.onclick = function () {
-                        portfolioBar.className = 'bar state-1';
-                    }
-                    portfolio2.onclick = function () {
-                        portfolioBar.className = 'bar state-2';
-                    }
-                    portfolio3.onclick = function () {
-                        portfolioBar.className = 'bar state-3';
-                    }
-                </script>
-            </nav>
-            <div class="project ">
-                <div class="big">
-                    <img src="./image/woks-0.jpg" alt="">
-                    <div class="desc">
-                        <h3>测试作品1</h3>
-                        <p>这是一段作品描述</p>
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <img src="./image/web-cv.jpg" alt="简历生成器" class="swiper-lazy">
+                        <div class="swiper-lazy-preloader"></div>
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="./image/canvas.jpg" alt="在线画板" class="swiper-lazy">
+                        <div class="swiper-lazy-preloader"></div>
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="./image/nav.jpg" alt="仿苹果风轮播" class="swiper-lazy">
+                        <div class="swiper-lazy-preloader"></div>
                     </div>
                 </div>
-                <div class="small" style="top: 0;">
-                    <img src="./image/woks-1.jpg" alt="">
-                    <div class="desc">
-                        <h3>测试作品2</h3>
-                        <p>这是一段作品描述</p>
-                    </div>
-                </div>
-                <div class="small" style="bottom: 0px;">
-                    <img src="./image/woks-2.jpg" alt="">
-                    <div class="desc">
-                        <h3>测试作品3</h3>
-                        <p>这是一段作品描述</p>
-                    </div>
-                </div>
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
             </div>
         </section>
-        <section data-x class="message" id="message">
+        <section data-x class="message container-inner offset" id="message">
             <h2>留言</h2>
             <form id="postMessageForm" method="POST">
                 <div class="form-group">
@@ -207,8 +183,9 @@
             <ol id="messageList"></ol>
         </section>
     </main>
-    <script src="https://cdn.bootcss.com/tween.js/r14/Tween.min.js"></script>
-    <script src="//cdn.jsdelivr.net/npm/leancloud-storage@3.12.0/dist/av-min.js"></script>
+    <script src="./lib/Tween.min.js"></script>
+    <script src="./lib/av-min.js"></script>
+    <script src="./lib/swiper.min.js"></script>
     <script src="./script/main.js"></script>
 </body>
 
